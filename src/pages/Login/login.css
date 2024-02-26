@@ -1,0 +1,52 @@
+/* login.css */
+
+/* Style for the login container */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Style for the login box */
+.login-box {
+  width: 400px; /* Maintain a fixed width for desktop/laptop screens */
+  max-width: 100%; /* Allow the login box to take full width on smaller screens */
+  padding: 80px;
+  padding-top: 50px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Style for the form inputs */
+.login-box .form-control {
+  margin-bottom: 15px;
+  width: 350px; /* Maintain a fixed width for desktop/laptop screens */
+}
+
+/* Style for the login button */
+.login-box .btn-primary {
+  width: 100%;
+}
+
+/* Style for the signup link */
+.login-box .text-center {
+  margin-top: 20px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 576px) {
+  .login-box {
+    width: 100%; /* Take full width on smaller screens */
+    padding: 20px; /* Adjust padding for smaller screens */
+  }
+
+  .login-box .form-control {
+    width: 100%; /* Take full width for form inputs on smaller screens */
+  }
+}
