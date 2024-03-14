@@ -5,36 +5,46 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  margin: 0;
-  font-family: 'Roboto', sans-serif; /* Use a modern font */
+  margin: 0px;
+  font-family: 'Roboto', sans-serif;
+  /* Use a modern font */
 }
 
 .book-appointment-container {
-  max-width: 900px; /* Increase the max-width for a wider form */
+  max-width: 900px;
+  /* Increase the max-width for a wider form */
   width: 100%;
-  margin: 90px auto; /* Center the container horizontally and add margin for better spacing */
+  margin: 90px;
+  /* Center the container horizontally and add margin for better spacing */
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 20px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+  background: linear-gradient(to right, #e0f2f1, #d0e3e0);
   align-content: center;
+  justify-content: center;
+  display: block;
 }
 
 .book-appointment-container h2 {
-  text-align: center; /* Center the heading */
-  margin-bottom: 20px; /* Adjust margin for better spacing */
+  text-align: center;
+  /* Center the heading */
+  margin-bottom: 20px;
+  /* Adjust margin for better spacing */
   color: #333;
 }
 
 .appointment-form {
   display: grid;
   gap: 20px;
-  grid-template-columns: repeat(2, 1fr); /* Two columns with equal width */
+  grid-template-columns: repeat(2, 1fr);
+  /* Two columns with equal width */
 }
 
 .form-group {
   position: relative;
-  margin-bottom: 15px; /* Add margin between form groups */
+  margin-bottom: 15px;
+  /* Add margin between form groups */
+  border-radius: 10px;
 }
 
 label {
@@ -48,24 +58,28 @@ select {
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 10px;
   font-size: 14px;
+
 }
 
 /* Style for invalid inputs */
 .form-group.invalid input,
 .form-group.invalid select {
+  border-radius: 10px;
   border-color: red;
-  background-color: #ffd6d6; /* Light red background color */
+  background-color: #ffd6d6;
+  /* Light red background color */
 }
 
 button {
-  grid-column: span 2; /* Make the button span both columns */
-  background-color: #007bff;
+  grid-column: span 2;
+  /* Make the button span both columns */
+  background-color: blue;
   color: #fff;
   padding: 12px;
   border: none;
-  border-radius: 4px;
+  border-radius: 10x;
   cursor: pointer;
   font-size: 16px;
 }
@@ -107,4 +121,17 @@ button:hover {
 /* Add this to the .form-group.invalid selector in your CSS to style the input border */
 .form-group.invalid input {
   border-color: red;
+}
+
+.form-title {
+  vertical-align: middle;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 40px;
+  font-weight: bold;
+}
+.submit-button{
+  border-radius: 12px !important;
+
 }

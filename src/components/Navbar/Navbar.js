@@ -143,7 +143,7 @@ export default function NvBar() {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" noWrap component="div">
-              OPD SYSTEM
+              MINDLABZ
             </Typography>
           </Box>
           {/* Account Menu */}
