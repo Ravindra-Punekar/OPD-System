@@ -1,39 +1,94 @@
 /* signup.css */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(to right, #f2e0e1, #d0d6e3);
+  opacity: 0.8;
+
+}
 
 /* Center the signup box vertically and horizontally */
 .signup-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Style for the signup box */
+.signup-box {
+  width: 50%;
+  max-width: 500px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: linear-gradient(to right, #e0f2f1, #d0e3e0);
+  opacity: 0.8;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+}
+
+/* Style for the form inputs */
+.form-control {
+  width: 100%;
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
+
+/* Style for the signup button */
+.btn-primary {
+  width: 100%;
+  background-color: blue;
+}
+
+/* Style for the login link */
+.text-center {
+  margin-top: 15px;
+}
+.welcome-slogan {
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.welcome-slogan h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  animation: entrance-top 0.8s ease-in-out forwards;
+}
+
+.welcome-slogan span {
+  font-size: 1.2em;
+  color: #333;
+  animation: entrance-bottom 1s ease-in-out forwards;
+}
+
+@keyframes entrance-top {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
   }
-  
-  /* Style for the signup box */
-  .signup-box {
-    width: 350px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  /* Style for the form inputs */
-  .form-control {
-    width: 100%;
-    margin-bottom: 15px;
+}
+
+@keyframes entrance-bottom {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  
-  /* Style for the signup button */
-  .btn-primary {
-    width: 100%;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  /* Style for the login link */
-  .text-center {
-    margin-top: 15px;
-  }
-  
+}
