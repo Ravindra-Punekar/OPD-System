@@ -8,6 +8,7 @@ import { doc, setDoc } from "firebase/firestore";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import Snackbar from "../../components/Snackbar/Snackbar";
 import "./Signup.css";
+import { fetchSignInMethodsForEmail } from "firebase/auth";
 
 function SU(email, password, name, surname, birthDate, role, doctorInfo) {
   return createUserWithEmailAndPassword(auth, email, password).then(
@@ -54,7 +55,7 @@ const Signup = () => {
   const [snackbarMessage, setSnackbarMessage] = useState("");
   const [snackbarType, setSnackbarType] = useState("error");
 
-  const { signUp } = useUserAuth();
+  const { SignUp } = useUserAuth();
   let navigate = useNavigate();
 
   const isPasswordValid = (password) => {
@@ -92,12 +93,35 @@ const Signup = () => {
         );
         return;
       }
-      await SU(email, password, name, surname, birthDate, role, doctorInfo);
+      //   showSnackbar("Siggining up...");
+      //   let a = await SU(email, password, name, surname, birthDate, role, doctorInfo);
 
-      showSnackbar("Signup successful!", "success");
-      navigate("/");
+      //   showSnackbar("Signup successful!", "success");
+      //   console.log("Signup successful!");
+      //   navigate("/home");
+      // }catch (err) {
+      //   setError(err.message);
+      //   console.error(err);
+      //   showSnackbar(err.message, "error");
+      // }
+      // Check if email is already in use
+      // const emailExists = await fetchSignInMethodsForEmail(auth, email);
+      // console.log("eme", emailExists);
+      // if (emailExists.length > 0) {
+      //   showSnackbar("Email already in use");
+      //   throw new Error("Email already in use");
+      // }
+
+      // showSnackbar("Signing up...");
+      await SU(email,password,name,surname,birthDate,role,doctorInfo).then(
+        console.log("Signup successful!!!!!!!!"),
+        showSnackbar("Signing up..."),
+        navigate("/home")
+      );
+      console.log("Signup successful!");
     } catch (err) {
       setError(err.message);
+      console.error(err);
       showSnackbar(err.message, "error");
     }
   };

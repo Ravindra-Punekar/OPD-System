@@ -11,6 +11,7 @@ const ProtectedRoute = ({ children }) => {
 
   console.log("Check user in Private: ", user);
   if (!user) {
+    console.log("User not found, imhere");
     return <Navigate to="/" />;
   }
   console.log(user.role);

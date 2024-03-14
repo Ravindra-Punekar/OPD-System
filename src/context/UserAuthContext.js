@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router";
 import {
   signInWithEmailAndPassword,
   onAuthStateChanged,
@@ -6,20 +7,36 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
 } from "firebase/auth";
-import { auth, db } from "../firebase";
+import { auth } from "../firebase";
 
 const userAuthContext = createContext();
 
 export function UserAuthContextProvider({ children }) {
   const [user, setUser] = useState({});
+  const navigate = useNavigate();
 
-  function logIn(email, password) {
-    return signInWithEmailAndPassword(auth, email, password);
+  async function logIn(email, password) {
+    await signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      const user = userCredential.user;
+      console.log("User", user);
+      setUser(user);
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log("Error code: ", errorCode);
+      console.log("Error message: ", errorMessage);
+    });
+
+    navigate("/home");
   }
-  
-  function logOut() {
-    return signOut(auth);
+
+  async function logOut() {
+    await signOut(auth);
+    navigate("/");
   }
+
   function googleSignIn() {
     const googleAuthProvider = new GoogleAuthProvider();
     return signInWithPopup(auth, googleAuthProvider);
@@ -37,9 +54,7 @@ export function UserAuthContextProvider({ children }) {
   }, []);
 
   return (
-    <userAuthContext.Provider
-      value={{ user, logIn, logOut, googleSignIn }}
-    >
+    <userAuthContext.Provider value={{ user, logIn, logOut, googleSignIn }}>
       {children}
     </userAuthContext.Provider>
   );
