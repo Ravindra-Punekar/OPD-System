@@ -16,7 +16,7 @@ const Home = () => {
   return (
     <div className="profile-container">
       <NvBar />
-      <h1>WLECOME TO OPD SYSTEM ! </h1>
+      <div className="welcome-title">WLECOME TO OPD SYSTEM ! </div>
       <div className="gif-container">
         <img src={load} alt="Hospital GIF" className="centered-gif" />
       </div>
