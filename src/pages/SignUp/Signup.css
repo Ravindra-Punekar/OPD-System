@@ -53,8 +53,42 @@ body {
 .text-center {
   margin-top: 15px;
 }
-.su-title{
-  font-size: 30px;
-  font-weight: bold;
-  margin-bottom: 20px;
+.welcome-slogan {
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.welcome-slogan h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  animation: entrance-top 0.8s ease-in-out forwards;
+}
+
+.welcome-slogan span {
+  font-size: 1.2em;
+  color: #333;
+  animation: entrance-bottom 1s ease-in-out forwards;
+}
+
+@keyframes entrance-top {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes entrance-bottom {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
