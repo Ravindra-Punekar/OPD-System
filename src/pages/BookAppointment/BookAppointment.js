@@ -166,7 +166,7 @@ const BookAppointment = () => {
     };
 
     return (
-        <>
+        <div className="book-appointment-screen">
             <NvBar />
             <div className="book-appointment-container">
                 <div className="form-title">Book an Appointment</div>
@@ -180,6 +180,7 @@ const BookAppointment = () => {
                             onChange={handleChange}
                             variant="outlined"
                             fullWidth
+                            size="small"
                             required
                             sx={{
                                 "& .MuiOutlinedInput-root": { borderRadius: "10px" }, // Target the root element
@@ -206,6 +207,7 @@ const BookAppointment = () => {
                             value={formData.bloodGroup}
                             onChange={handleChange}
                             variant="outlined"
+                            size="small"
                             fullWidth
                             required
                             sx={{
@@ -257,13 +259,14 @@ const BookAppointment = () => {
                         />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="appointmentDateTime">Choose Appointment Date</label>
+                        <label htmlFor="appointmentDateTime">Choose Appointment Date:</label>
                         <TextField
                             type="date"
                             name="appointmentDateTime"
                             value={formData.appointmentDateTime}
                             onChange={handleChange}
                             variant="outlined"
+                            size="medium"
                             fullWidth
                             InputLabelProps={{
                                 shrink: true,
@@ -298,7 +301,7 @@ const BookAppointment = () => {
                     </MuiAlert>
                 </Snackbar>
             </div>
-        </>
+        </div>
     );
 };
 

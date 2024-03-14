@@ -112,11 +112,12 @@ const PatientProfile = () => {
   };
 
   return (
-    <div className="profile-container">
+    <>
       <NvBar />
+    <div className="profile-container">
       <Row>
         <Col md={4}>
-          <Card>
+          <Card className="user-data">
             <Card.Body>
               <h2>Welcome {patientData && patientData.name} !</h2>
               {patientData && (
@@ -175,7 +176,7 @@ const PatientProfile = () => {
           </Card>
         </Col>
       </Row>
-    </div>
+    </div></>
   );
 };
 
