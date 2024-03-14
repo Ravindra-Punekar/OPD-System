@@ -48,14 +48,14 @@ const Login = () => {
   return (
     <div className="login-container">
       <div className="login-box">
-        <h2 className="mb-4">OPD System </h2>
+        <div className="login-title">WELCOME! </div>
 
-        <h2 className="mb-4">Login</h2>
+        <div className="login-subtitle">Login</div>
 
         {error && <Alert variant="danger">{error}</Alert>}
 
         <Form onSubmit={handleSubmit}>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Group className="mb-3 form-field" controlId="formBasicEmail">
             <Form.Control
               type="email"
               placeholder="Email address"

@@ -1,16 +1,19 @@
 /* Home.css */
 
 .hospital-theme {
-  background-color: #f8f9fa; /* Light background color */
+  background-color: #f8f9fa;
+  /* Light background color */
   padding: 20px;
 }
 
 .welcome-section {
   text-align: center;
   padding: 20px;
-  background-color: #ffffff; /* White background color */
+  background-color: #ffffff;
+  /* White background color */
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle lift */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* Box shadow for a subtle lift */
 }
 
 .uid-section {
@@ -27,14 +30,43 @@
   text-align: center;
   margin-top: 20px;
 }
+
 .gif-container {
-  display: flex;
+  display: inline;
   justify-content: center;
   align-items: center;
-  height: 80vh; /* Adjust the height as needed */
+  align-self: center;
+  align-content: center;
+  height: 5px;
+  /* Adjust the height as needed */
+  width: 5px;
 }
 
 .centered-gif {
-  max-width: 40%;
-  max-height: 40%;
+  max-height: 500%;
+  padding-top: 150px;
+  align-self: center;
+  justify-self: center;
+  /* Center the gif */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Center the gif */
+  z-index: -100;
+
+}
+
+.centered-gif {
+  opacity: 0.35;
+  /* Adjust opacity between 0 (fully transparent) and 1 (fully opaque) */
+  mask-mode: alpha;
+}
+
+.profile-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+  border-radius: 10px;
 }

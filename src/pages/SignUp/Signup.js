@@ -168,7 +168,7 @@ const Signup = () => {
   return (
     <div className="signup-container">
       <div className="signup-box">
-        <h2 className="mb-3">Signup</h2>
+        <h2 className="su-title">Signup</h2>
 
         {error && <Alert variant="danger">{error}</Alert>}
 
